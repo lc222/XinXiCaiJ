@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工学4班信息采集</title>
+</head>
+<body>
+    <div>广告内容</div>
+    <div id="siteTable"></div>
+    <div>广告内容</div>
+    <script>
+
+    var website = [
+        {"site":"逐浪小说","url":"http://www.zhulang.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"},
+        {"site":"起点小说","url":"http://www.qidian.com"}
+    ];
+    var xinxi=[姓名,学号,导师,导师电话,本人手机号,Email,微信号,QQ,
+        体重,身高,鞋号,火车站,特长,学费,父亲姓名,父亲工作,父亲手机号,
+        母亲姓名,母亲工作,母亲手机号,家庭电话,家庭地址,在京联系人姓名,
+        在京联系人工作,在京联系人手机号,宿舍号,宿舍长];
+    var col = 5;//表格列数
+    var td = website.length%col==0?website.length:Math.ceil(website.length/col)*col;
+    var _i = 0;
+    var html ="<table><tr>";
+    for(var i=0;i<td;i++){
+        if(website[i]){
+            html += '<td><a href="'+website[i].url+'">'+website[i].site+'</a></td>';
+        }else{
+            html += '<td></td>';
+        }
+        if((i+1)%col==0 && i>0){
+            html+="</tr><tr>";
+        }
+    }
+    html +="</tr></table>"
+    document.getElementById('siteTable').innerHTML = html;
+    </script>
+</body>
+</html>
